@@ -1,0 +1,4 @@
+{
+  "frontend/src/pages/ChallengeWorkspace.tsx": "Full-screen challenge workspace page that fetches a challenge by ID from the backend, displays the problem statement with metadata (difficulty, category, estimated time), provides a free-form answer editor, and saves submissions to localStorage with a success confirmation banner.",
+  "frontend/src/pages/MyNotes.tsx": "My Notes history page that reads saved AI Mentor responses from localStorage, displays them as collapsible note cards with timestamps, and allows individual or bulk deletion; shows an empty state with example prompts when no notes exist."
+}

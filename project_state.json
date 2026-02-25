@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "AI-powered education and skilling platform that bridges the gap between academic CS curriculums and industry expectations. Focuses on teaching architectural logic, problem-solving, and practical system design (not just syntax). Includes interactive frontend UI to visualize why certain approaches (e.g., BST vs flat array, Git conflict resolution) are used in real-world scenarios.",
+  "architectural_notes": [
+    "Interactive, visually rich frontend is a priority — use animations and diagrams to illustrate CS concepts",
+    "Platform focus: teach reasoning and architectural thinking, not just syntax checking"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Dark hero banner with circuit board pattern, glowing nodes, and subtle neon green grid lines (hero-banner.dim_1400x400.png)\n- Minimalist neon-green brain-chip icon on dark background (logo-icon.dim_128x128.png)\n- Abstract dark background texture with faint hexagonal grid pattern in deep charcoal (bg-texture.dim_1920x1080.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-visually-rich-interactive-dashboard-as-the-main-landing-page-showing-the-student-s-learning-path-progress-stats-and-quick-access-cards-for-each-module-architectural-logic-data-structures-system-design-git-mastery-use-a-dark-tech-aesthetic-with-accent-neon-highlights-bold-typography-and-animated-progress-indicators",
+      "title": "Create a visually rich, interactive dashboard as the main landing page showing the student's learning path, progress stats, and quick-access cards for each module (Architectural Logic, Data Structures, System Design, Git Mastery). Use a dark-tech aesthetic with accent neon highlights, bold typography, and animated progress indicators.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-an-interactive-data-structure-visualizer-module-that-lets-students-compare-algorithmic-approaches-side-by-side-e-g-bst-vs-flat-array-search-animate-step-by-step-traversal-with-highlighted-nodes-elements-display-time-complexity-callouts-and-explain-with-contextual-why-this-matters-in-industry-tooltips",
+      "title": "Build an interactive Data Structure Visualizer module that lets students compare algorithmic approaches side-by-side (e.g., BST vs flat array search). Animate step-by-step traversal with highlighted nodes/elements, display time complexity callouts, and explain with contextual 'why this matters in industry' tooltips.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-an-ai-mentor-panel-that-displays-contextual-explanations-for-any-code-problem-or-architectural-decision-the-mentor-responds-with-why-reasoning-not-just-correctness-structured-as-approach-chosen-trade-offs-real-world-analogy-better-alternative-if-any-mentor-responses-are-stored-in-the-backend-and-retrieved-per-session",
+      "title": "Build an AI Mentor panel that displays contextual explanations for any code problem or architectural decision. The mentor responds with 'why' reasoning (not just correctness), structured as: Approach Chosen → Trade-offs → Real-world Analogy → Better Alternative (if any). Mentor responses are stored in the backend and retrieved per session.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-git-conflict-resolution-simulator-module-present-the-student-with-a-realistic-merge-conflict-scenario-base-ours-theirs-versions-shown-in-a-split-diff-editor-student-resolves-the-conflict-by-editing-the-merged-output-the-system-validates-the-resolution-and-provides-step-by-step-guided-hints-if-the-student-is-stuck",
+      "title": "Build a Git Conflict Resolution Simulator module. Present the student with a realistic merge conflict scenario (base, ours, theirs versions shown in a split diff editor). Student resolves the conflict by editing the merged output. The system validates the resolution and provides step-by-step guided hints if the student is stuck.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-an-industry-challenge-feed-that-lists-real-world-system-design-and-architectural-tasks-e-g-design-a-url-shortener-choose-the-right-db-for-a-ride-sharing-app-each-challenge-card-shows-difficulty-estimated-time-and-a-start-challenge-cta-challenges-are-stored-and-retrieved-from-the-backend",
+      "title": "Build an Industry Challenge Feed that lists real-world system design and architectural tasks (e.g., 'Design a URL shortener', 'Choose the right DB for a ride-sharing app'). Each challenge card shows difficulty, estimated time, and a 'Start Challenge' CTA. Challenges are stored and retrieved from the backend.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-cohesive-dark-tech-visual-theme-across-the-entire-application-deep-charcoal-near-black-backgrounds-electric-green-and-cyan-neon-accents-monospace-sans-serif-font-pairing-subtle-grid-or-circuit-pattern-backgrounds-glowing-card-borders-on-hover-and-smooth-page-transition-animations-the-design-should-feel-like-a-professional-developer-ide-meets-a-learning-platform",
+      "title": "Apply a cohesive dark-tech visual theme across the entire application: deep charcoal/near-black backgrounds, electric green and cyan neon accents, monospace + sans-serif font pairing, subtle grid or circuit-pattern backgrounds, glowing card borders on hover, and smooth page transition animations. The design should feel like a professional developer IDE meets a learning platform.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Interactive dashboard showing learning modules for architectural logic and system design",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Visual comparison tool: show why BST vs flat array or other data structure choices matter with animated diagrams",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "AI-driven problem-solving mentor that explains the 'why' behind coding decisions, not just correctness",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Git conflict resolution simulator with step-by-step guided walkthrough",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Industry-aligned challenge feed with real-world scenarios and system design tasks",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "AI SkillBridge",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

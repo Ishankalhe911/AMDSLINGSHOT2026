@@ -1,0 +1,153 @@
+{
+  "kind": "build_request",
+  "title": "AI in Education & Skilling — Interactive CS Learning Platform",
+  "projectName": "SkillBridge AI",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a visually rich, interactive dashboard as the main landing page showing the student's learning path, progress stats, and quick-access cards for each module (Architectural Logic, Data Structures, System Design, Git Mastery). Use a dark-tech aesthetic with accent neon highlights, bold typography, and animated progress indicators.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "give interactive frontend side which is better to see"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Dashboard renders module cards with title, short description, and progress percentage",
+        "Animated progress bars or ring charts reflect completion state",
+        "Navigation between modules is accessible from the dashboard",
+        "Layout is responsive across desktop and tablet viewports"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Build an interactive Data Structure Visualizer module that lets students compare algorithmic approaches side-by-side (e.g., BST vs flat array search). Animate step-by-step traversal with highlighted nodes/elements, display time complexity callouts, and explain with contextual 'why this matters in industry' tooltips.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "why a specific approach (like using a Binary Search Tree over a flat array",
+          "Current learning platforms act as simple auto-graders, failing to teach students why"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Student can select two data structures to compare from a dropdown",
+        "Animated step-by-step traversal runs on a sample dataset",
+        "Big-O complexity labels are shown for each approach",
+        "Industry context tooltip explains a real-world scenario where the preferred approach wins",
+        "A 'Run comparison' button triggers the animation"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Build an AI Mentor panel that displays contextual explanations for any code problem or architectural decision. The mentor responds with 'why' reasoning (not just correctness), structured as: Approach Chosen → Trade-offs → Real-world Analogy → Better Alternative (if any). Mentor responses are stored in the backend and retrieved per session.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "failing to teach students why a specific approach",
+          "problem-solving, and practical system design"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Mentor panel is accessible from every module page",
+        "Student can type a question or paste a code snippet",
+        "Response renders in a structured card with the four sections (Approach, Trade-offs, Analogy, Alternative)",
+        "Mentor responses are saved to the backend and can be revisited in a 'My Notes' history list",
+        "Loading state with animated thinking indicator is shown while response is being fetched"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Build a Git Conflict Resolution Simulator module. Present the student with a realistic merge conflict scenario (base, ours, theirs versions shown in a split diff editor). Student resolves the conflict by editing the merged output. The system validates the resolution and provides step-by-step guided hints if the student is stuck.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "resolving Git conflicts",
+          "Current learning platforms act as simple auto-graders"
+        ]
+      },
+      "acceptanceCriteria": [
+        "At least 3 pre-loaded conflict scenarios are available (simple variable rename, logic divergence, structural refactor)",
+        "Three-panel diff view shows base, ours, and theirs side by side",
+        "Editable merged output panel lets the student resolve the conflict",
+        "A 'Check Resolution' button validates the student's answer against the expected output stored in the backend",
+        "Hints are revealed progressively (up to 3 levels) when the student requests help",
+        "Success state shows a congratulation banner with an explanation of the correct resolution"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Build an Industry Challenge Feed that lists real-world system design and architectural tasks (e.g., 'Design a URL shortener', 'Choose the right DB for a ride-sharing app'). Each challenge card shows difficulty, estimated time, and a 'Start Challenge' CTA. Challenges are stored and retrieved from the backend.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Industry-aligned challenge feed with real-world scenarios and system design tasks",
+          "lack the environment to practice architectural logic, problem-solving, and practical system design"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Challenge feed shows a scrollable list of at least 6 pre-seeded challenges",
+        "Each card displays title, category tag, difficulty badge (Beginner/Intermediate/Advanced), and estimated time",
+        "Clicking 'Start Challenge' opens a full-screen challenge workspace with a problem statement and a free-form answer editor",
+        "Submitted answers are saved to the backend linked to the student's session",
+        "Challenges can be filtered by category or difficulty on the frontend"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Apply a cohesive dark-tech visual theme across the entire application: deep charcoal/near-black backgrounds, electric green and cyan neon accents, monospace + sans-serif font pairing, subtle grid or circuit-pattern backgrounds, glowing card borders on hover, and smooth page transition animations. The design should feel like a professional developer IDE meets a learning platform.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "give interactive frontend side which is better to see"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All pages share the same dark background and accent color tokens via Tailwind config",
+        "Card hover states include a glowing border effect",
+        "Typography uses a monospace font for code/technical content and a clean sans-serif for body text",
+        "Smooth CSS transitions are applied to route changes and interactive elements",
+        "No page uses a white or light background"
+      ]
+    }
+  ],
+  "constraints": [
+    "All backend logic must reside in a single Motoko actor (backend/main.mo)",
+    "Do not integrate any external AI API — mentor responses and challenge hints must be pre-authored or rule-based within the backend",
+    "Do not modify any files under frontend/src/hooks/ or frontend/src/components/ui",
+    "No external databases — all data persisted in Motoko stable variables"
+  ],
+  "nonGoals": [
+    "Real-time collaborative coding or WebSocket-based features",
+    "User authentication or Internet Identity integration in this iteration",
+    "Mobile native app or React Native implementation",
+    "Integration with third-party LLM APIs (OpenAI, Anthropic, etc.)",
+    "Automated code execution or sandboxed code runner"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Dark hero banner with circuit board pattern, glowing nodes, and subtle neon green grid lines (hero-banner.dim_1400x400.png)",
+      "Minimalist neon-green brain-chip icon on dark background (logo-icon.dim_128x128.png)",
+      "Abstract dark background texture with faint hexagonal grid pattern in deep charcoal (bg-texture.dim_1920x1080.png)"
+    ],
+    "edits": []
+  }
+}

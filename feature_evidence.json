@@ -1,0 +1,137 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-visually-rich-interactive-dashboard-as-the-main-landing-page-showing-the-student-s-learning-path-progress-stats-and-quick-access-cards-for-each-module-architectural-logic-data-structures-system-design-git-mastery-use-a-dark-tech-aesthetic-with-accent-neon-highlights-bold-typography-and-animated-progress-indicators",
+      "featureTitle": "Create a visually rich, interactive dashboard as the main landing page showing the student's learning path, progress stats, and quick-access cards for each module (Architectural Logic, Data Structures, System Design, Git Mastery). Use a dark-tech aesthetic with accent neon highlights, bold typography, and animated progress indicators.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/ModuleCard.tsx",
+        "frontend/src/components/ProgressRing.tsx",
+        "frontend/src/pages/Dashboard.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-an-interactive-data-structure-visualizer-module-that-lets-students-compare-algorithmic-approaches-side-by-side-e-g-bst-vs-flat-array-search-animate-step-by-step-traversal-with-highlighted-nodes-elements-display-time-complexity-callouts-and-explain-with-contextual-why-this-matters-in-industry-tooltips",
+      "featureTitle": "Build an interactive Data Structure Visualizer module that lets students compare algorithmic approaches side-by-side (e.g., BST vs flat array search). Animate step-by-step traversal with highlighted nodes/elements, display time complexity callouts, and explain with contextual 'why this matters in industry' tooltips.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/AlgorithmVisualizer.tsx",
+        "frontend/src/components/ComparisonPanel.tsx",
+        "frontend/src/pages/DataStructureVisualizer.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-an-ai-mentor-panel-that-displays-contextual-explanations-for-any-code-problem-or-architectural-decision-the-mentor-responds-with-why-reasoning-not-just-correctness-structured-as-approach-chosen-trade-offs-real-world-analogy-better-alternative-if-any-mentor-responses-are-stored-in-the-backend-and-retrieved-per-session",
+      "featureTitle": "Build an AI Mentor panel that displays contextual explanations for any code problem or architectural decision. The mentor responds with 'why' reasoning (not just correctness), structured as: Approach Chosen → Trade-offs → Real-world Analogy → Better Alternative (if any). Mentor responses are stored in the backend and retrieved per session.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/AIMentorPanel.tsx",
+        "frontend/src/components/Layout.tsx",
+        "frontend/src/components/MentorResponseCard.tsx",
+        "frontend/src/pages/MyNotes.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-git-conflict-resolution-simulator-module-present-the-student-with-a-realistic-merge-conflict-scenario-base-ours-theirs-versions-shown-in-a-split-diff-editor-student-resolves-the-conflict-by-editing-the-merged-output-the-system-validates-the-resolution-and-provides-step-by-step-guided-hints-if-the-student-is-stuck",
+      "featureTitle": "Build a Git Conflict Resolution Simulator module. Present the student with a realistic merge conflict scenario (base, ours, theirs versions shown in a split diff editor). Student resolves the conflict by editing the merged output. The system validates the resolution and provides step-by-step guided hints if the student is stuck.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/DiffPanel.tsx",
+        "frontend/src/components/MergedOutputEditor.tsx",
+        "frontend/src/pages/GitConflictSimulator.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-an-industry-challenge-feed-that-lists-real-world-system-design-and-architectural-tasks-e-g-design-a-url-shortener-choose-the-right-db-for-a-ride-sharing-app-each-challenge-card-shows-difficulty-estimated-time-and-a-start-challenge-cta-challenges-are-stored-and-retrieved-from-the-backend",
+      "featureTitle": "Build an Industry Challenge Feed that lists real-world system design and architectural tasks (e.g., 'Design a URL shortener', 'Choose the right DB for a ride-sharing app'). Each challenge card shows difficulty, estimated time, and a 'Start Challenge' CTA. Challenges are stored and retrieved from the backend.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/AnswerEditor.tsx",
+        "frontend/src/components/ChallengeCard.tsx",
+        "frontend/src/pages/ChallengeWorkspace.tsx",
+        "frontend/src/pages/IndustryChallengeFeed.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-cohesive-dark-tech-visual-theme-across-the-entire-application-deep-charcoal-near-black-backgrounds-electric-green-and-cyan-neon-accents-monospace-sans-serif-font-pairing-subtle-grid-or-circuit-pattern-backgrounds-glowing-card-borders-on-hover-and-smooth-page-transition-animations-the-design-should-feel-like-a-professional-developer-ide-meets-a-learning-platform",
+      "featureTitle": "Apply a cohesive dark-tech visual theme across the entire application: deep charcoal/near-black backgrounds, electric green and cyan neon accents, monospace + sans-serif font pairing, subtle grid or circuit-pattern backgrounds, glowing card borders on hover, and smooth page transition animations. The design should feel like a professional developer IDE meets a learning platform.",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

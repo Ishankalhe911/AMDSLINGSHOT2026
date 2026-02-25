@@ -1,0 +1,220 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "AI in Education & Skilling — Interactive CS Learning Platform Frontend",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create an interactive dashboard landing page with module cards, progress stats, and dark-tech aesthetic",
+      "acceptanceCriteria": [
+        "Dashboard renders module cards with title, short description, and progress percentage",
+        "Animated progress bars or ring charts reflect completion state",
+        "Navigation between modules is accessible from the dashboard",
+        "Layout is responsive across desktop and tablet viewports"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Dashboard.tsx",
+          "operation": "create",
+          "description": "Create the main dashboard page component rendering the student's learning path with four module cards (Architectural Logic, Data Structures, System Design, Git Mastery). Each card displays title, description, and animated progress indicator. Use dark-tech styling with neon accents and bold typography. Include quick-access navigation to each module."
+        },
+        {
+          "path": "frontend/src/components/ModuleCard.tsx",
+          "operation": "create",
+          "description": "Create a reusable module card component displaying module title, short description, progress percentage, and animated progress visualization (ring chart or progress bar). Apply hover effects with glowing borders. Accept props for module data and navigation callback."
+        },
+        {
+          "path": "frontend/src/components/ProgressRing.tsx",
+          "operation": "create",
+          "description": "Create an animated circular progress ring component using SVG. Accept percentage prop and animate the stroke-dashoffset to reflect completion state. Use neon green stroke color with smooth transitions."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the Dashboard component as the default landing route. Configure React Router to render Dashboard at the root path and ensure navigation to module pages is functional."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Build an interactive Data Structure Visualizer with side-by-side algorithm comparison and animated step-by-step traversal",
+      "acceptanceCriteria": [
+        "Student can select two data structures to compare from a dropdown",
+        "Animated step-by-step traversal runs on a sample dataset",
+        "Big-O complexity labels are shown for each approach",
+        "Industry context tooltip explains a real-world scenario where the preferred approach wins",
+        "A 'Run comparison' button triggers the animation"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/DataStructureVisualizer.tsx",
+          "operation": "create",
+          "description": "Create the Data Structure Visualizer module page with dual dropdown selectors for choosing two data structures (e.g., BST vs flat array). Include a 'Run comparison' button, side-by-side visualization panels, Big-O complexity labels, and industry context tooltips. Manage animation state and step-by-step traversal logic within the component."
+        },
+        {
+          "path": "frontend/src/components/AlgorithmVisualizer.tsx",
+          "operation": "create",
+          "description": "Create a reusable algorithm visualization component that renders animated step-by-step traversal for a given data structure. Highlight active nodes/elements during traversal. Accept props for data structure type, dataset, and current step index."
+        },
+        {
+          "path": "frontend/src/components/ComparisonPanel.tsx",
+          "operation": "create",
+          "description": "Create a side-by-side comparison panel component displaying two AlgorithmVisualizer instances, Big-O complexity callouts, and an industry context tooltip. Synchronize animation steps between both visualizations."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add a route for the Data Structure Visualizer page at /data-structures and ensure it is accessible from the Dashboard module cards."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Build an AI Mentor panel with contextual explanations, structured responses, and session-based history retrieval",
+      "acceptanceCriteria": [
+        "Mentor panel is accessible from every module page",
+        "Student can type a question or paste a code snippet",
+        "Response renders in a structured card with the four sections (Approach, Trade-offs, Analogy, Alternative)",
+        "Mentor responses are saved to the backend and can be revisited in a 'My Notes' history list",
+        "Loading state with animated thinking indicator is shown while response is being fetched"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/AIMentorPanel.tsx",
+          "operation": "create",
+          "description": "Create the AI Mentor panel component with a text input for questions/code snippets and a submit button. Display structured response cards with four sections: Approach Chosen, Trade-offs, Real-world Analogy, Better Alternative. Show animated thinking indicator during loading. Call the backend storeMentorResponse method to persist responses. Accept sessionId as a prop."
+        },
+        {
+          "path": "frontend/src/components/MentorResponseCard.tsx",
+          "operation": "create",
+          "description": "Create a structured mentor response card component rendering the four sections (Approach, Trade-offs, Analogy, Alternative) in a visually distinct layout with section headers and neon accent borders."
+        },
+        {
+          "path": "frontend/src/pages/MyNotes.tsx",
+          "operation": "create",
+          "description": "Create a My Notes history page displaying all saved mentor responses for the current session. Render a list of MentorResponseCard components. Retrieve stored responses from the backend if persistence logic is extended (currently backend only stores, does not retrieve by session)."
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "create",
+          "description": "Create a shared layout component wrapping all module pages. Include the AIMentorPanel as a persistent sidebar or collapsible overlay accessible from every page. Manage mentor panel visibility state and pass sessionId to the panel."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap module routes with the Layout component to make the AI Mentor panel accessible from every module page. Add a route for the My Notes page at /my-notes and include a navigation link in the layout."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Build a Git Conflict Resolution Simulator with three-panel diff view, editable merged output, and progressive hints",
+      "acceptanceCriteria": [
+        "At least 3 pre-loaded conflict scenarios are available (simple variable rename, logic divergence, structural refactor)",
+        "Three-panel diff view shows base, ours, and theirs side by side",
+        "Editable merged output panel lets the student resolve the conflict",
+        "A 'Check Resolution' button validates the student's answer against the expected output stored in the backend",
+        "Hints are revealed progressively (up to 3 levels) when the student requests help",
+        "Success state shows a congratulation banner with an explanation of the correct resolution"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/GitConflictSimulator.tsx",
+          "operation": "create",
+          "description": "Create the Git Conflict Resolution Simulator module page with a scenario selector dropdown (at least 3 pre-loaded scenarios: variable rename, logic divergence, structural refactor). Render a three-panel diff view showing base, ours, and theirs versions. Include an editable merged output panel, 'Check Resolution' button, progressive hints button (up to 3 levels), and success/failure state banners. Validate resolution logic on the frontend by comparing against expected output embedded in scenario data."
+        },
+        {
+          "path": "frontend/src/components/DiffPanel.tsx",
+          "operation": "create",
+          "description": "Create a three-panel diff view component displaying base, ours, and theirs code versions side by side. Highlight differences using syntax highlighting and color-coded backgrounds. Accept scenario data as props."
+        },
+        {
+          "path": "frontend/src/components/MergedOutputEditor.tsx",
+          "operation": "create",
+          "description": "Create an editable code editor component for the merged output panel. Use a monospace font and syntax highlighting. Accept initial conflict markers and allow the student to edit and resolve the conflict. Expose the edited content via callback prop."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add a route for the Git Conflict Simulator page at /git-conflicts and ensure it is accessible from the Dashboard module cards."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Build an Industry Challenge Feed with scrollable challenge cards, filtering, and full-screen challenge workspace",
+      "acceptanceCriteria": [
+        "Challenge feed shows a scrollable list of at least 6 pre-seeded challenges",
+        "Each card displays title, category tag, difficulty badge (Beginner/Intermediate/Advanced), and estimated time",
+        "Clicking 'Start Challenge' opens a full-screen challenge workspace with a problem statement and a free-form answer editor",
+        "Submitted answers are saved to the backend linked to the student's session",
+        "Challenges can be filtered by category or difficulty on the frontend"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/IndustryChallengeFeed.tsx",
+          "operation": "create",
+          "description": "Create the Industry Challenge Feed page displaying a scrollable list of challenge cards. Fetch challenges from the backend using the getAllChallenges method. Include filter controls for category and difficulty. Each card shows title, category tag, difficulty badge (Beginner/Intermediate/Advanced based on difficulty value), estimated time, and a 'Start Challenge' CTA. Navigate to the challenge workspace on card click."
+        },
+        {
+          "path": "frontend/src/components/ChallengeCard.tsx",
+          "operation": "create",
+          "description": "Create a reusable challenge card component displaying challenge title, category tag, difficulty badge, estimated time, and 'Start Challenge' button. Apply hover effects with glowing borders. Accept challenge data and onClick callback as props."
+        },
+        {
+          "path": "frontend/src/pages/ChallengeWorkspace.tsx",
+          "operation": "create",
+          "description": "Create a full-screen challenge workspace page displaying the problem statement and a free-form answer editor. Fetch the selected challenge details using the getChallenge backend method by challenge ID from route params. Include a submit button that saves the answer (currently backend does not have a method to store answers; handle this with client-side state or extend backend in future). Show success confirmation after submission."
+        },
+        {
+          "path": "frontend/src/components/AnswerEditor.tsx",
+          "operation": "create",
+          "description": "Create a free-form text editor component for challenge answers. Use a textarea with monospace font and dark-tech styling. Accept initial value and onChange callback as props."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add routes for the Industry Challenge Feed page at /challenges and the Challenge Workspace page at /challenges/:id. Ensure the Challenge Feed is accessible from the Dashboard module cards."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Apply cohesive dark-tech visual theme with neon accents, monospace typography, grid backgrounds, and smooth transitions",
+      "acceptanceCriteria": [
+        "All pages share the same dark background and accent color tokens via Tailwind config",
+        "Card hover states include a glowing border effect",
+        "Typography uses a monospace font for code/technical content and a clean sans-serif for body text",
+        "Smooth CSS transitions are applied to route changes and interactive elements",
+        "No page uses a white or light background"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend the Tailwind configuration to define custom dark-tech theme tokens: deep charcoal/near-black backgrounds (bg-dark), electric green and cyan neon accent colors (accent-green, accent-cyan), monospace and sans-serif font families. Configure global color palette to ensure no white or light backgrounds are used."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Apply global dark-tech styling: set body background to deep charcoal, define CSS variables for neon accent colors, apply monospace font to code elements and sans-serif to body text. Add utility classes for glowing card borders on hover and smooth page transition animations. Reference the generated background texture image at frontend/public/assets/generated/bg-texture.dim_1920x1080.png as a subtle background pattern."
+        },
+        {
+          "path": "frontend/public/assets/generated/hero-banner.dim_1400x400.png",
+          "operation": "create",
+          "description": "Wire the generated hero banner image (Dark hero banner with circuit board pattern, glowing nodes, and subtle neon green grid lines) into the Dashboard component as a visual header or hero section. Use the exact workspace path frontend/public/assets/generated/hero-banner.dim_1400x400.png in the component's image src attribute."
+        },
+        {
+          "path": "frontend/public/assets/generated/logo-icon.dim_128x128.png",
+          "operation": "create",
+          "description": "Wire the generated logo icon (Minimalist neon-green brain-chip icon on dark background) into the Layout component or navigation header as the application logo. Use the exact workspace path frontend/public/assets/generated/logo-icon.dim_128x128.png in the component's image src attribute."
+        },
+        {
+          "path": "frontend/public/assets/generated/bg-texture.dim_1920x1080.png",
+          "operation": "create",
+          "description": "Wire the generated background texture (Abstract dark background texture with faint hexagonal grid pattern in deep charcoal) into the global stylesheet (frontend/src/index.css) as a body background image. Use the exact workspace path frontend/public/assets/generated/bg-texture.dim_1920x1080.png in the CSS background-image property."
+        }
+      ]
+    }
+  ]
+}

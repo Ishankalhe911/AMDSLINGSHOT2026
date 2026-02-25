@@ -1,0 +1,132 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-24T14:46:12.004Z",
+  "summary": "The diff implements most of the required features across frontend and backend. However, several specific acceptance criteria have gaps or are only partially implemented. The backend is missing conflict validation, hint retrieval, and answer-saving linked to sessions. Some frontend AC items like filtering challenges and the named modules from the spec are absent or renamed.",
+  "missing_requirements": [
+    {
+      "requirement": "Dashboard must include module cards for all four specified modules: Architectural Logic, Data Structures, System Design, Git Mastery",
+      "reason": "The Dashboard.tsx shows 'Data Structure Visualizer', 'Git Conflict Simulator', 'Industry Challenges', and 'AI Mentor Notes' — not the spec-named modules 'Architectural Logic' and 'System Design'. 'Architectural Logic' and 'Git Mastery' are missing by name.",
+      "evidence": [
+        "frontend/src/pages/Dashboard.tsx"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "requirement": "A 'Check Resolution' button validates the student's answer against the expected output stored in the backend",
+      "reason": "The backend main.mo defines a MergeConflict type with 'resolved' and 'isValid' fields but no public query or update function is exposed to validate a student's merge resolution against stored expected output. The GitConflictSimulator page file is omitted from the diff.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "requirement": "Hints are revealed progressively (up to 3 levels) when the student requests help; hints are stored and retrieved from the backend",
+      "reason": "The backend MergeConflict type has a 'hints' field but no public function to retrieve hints per scenario is visible in main.mo. The GitConflictSimulator page is omitted from the diff.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "requirement": "At least 3 pre-loaded conflict scenarios are available in the backend",
+      "reason": "The backend defines a MergeConflict type and a 'conflicts' map but no pre-seeded scenarios are initialized and no public functions to add or retrieve conflict scenarios are present in main.mo.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "requirement": "Submitted answers are saved to the backend linked to the student's session",
+      "reason": "ChallengeWorkspace.tsx saves answers to localStorage only via a saveAnswer function, not to the backend. The backend has no function to store submitted answers linked to sessions.",
+      "evidence": [
+        "frontend/src/pages/ChallengeWorkspace.tsx",
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "requirement": "Challenges can be filtered by category or difficulty on the frontend",
+      "reason": "The IndustryChallengeFeed page file is omitted from the diff. No filter state or filter UI implementation is visible in any of the included files.",
+      "evidence": [
+        "frontend/src/components/ChallengeCard.tsx"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "requirement": "Mentor responses are saved to the backend and can be revisited in a 'My Notes' history list",
+      "reason": "The storeMentorResponse mutation exists but there is no backend query function to retrieve stored mentor responses by session. The MyNotes page file is omitted from the diff and cannot be verified.",
+      "evidence": [
+        "backend/main.mo",
+        "frontend/src/hooks/useQueries.ts"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "requirement": "Challenge feed shows a scrollable list of at least 6 pre-seeded challenges",
+      "reason": "The backend provides addChallenge and getAllChallenges but no pre-seeded challenges are initialized in main.mo. The IndustryChallengeFeed page is omitted from the diff.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "requirement": "Smooth CSS transitions are applied to route changes",
+      "reason": "The index.css and App.tsx do not show any route-level transition animations. Only element-level transitions such as glow-card and animate-fade-in-up are present.",
+      "evidence": [
+        "frontend/src/index.css",
+        "frontend/src/App.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "HashMap and Linked List visualizer types included in the Data Structure Visualizer beyond the spec's BST vs flat array example",
+      "reason": "The spec references BST vs flat array as the primary comparison example. The implementation adds HashMap and LinkedList as selectable DSType options, which were not requested.",
+      "evidence": [
+        "frontend/src/components/AlgorithmVisualizer.tsx",
+        "frontend/src/components/ComparisonPanel.tsx"
+      ]
+    },
+    {
+      "description": "localStorage-based session answer persistence in ChallengeWorkspace used instead of backend storage",
+      "reason": "The spec explicitly requires submitted answers to be saved to the backend. The implementation uses localStorage as a substitute, which was not specified.",
+      "evidence": [
+        "frontend/src/pages/ChallengeWorkspace.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.62,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/AIMentorPanel.tsx",
+    "frontend/src/components/AlgorithmVisualizer.tsx",
+    "frontend/src/components/AnswerEditor.tsx",
+    "frontend/src/components/ChallengeCard.tsx",
+    "frontend/src/components/ComparisonPanel.tsx",
+    "frontend/src/components/DiffPanel.tsx",
+    "frontend/src/components/Layout.tsx",
+    "frontend/src/components/MentorResponseCard.tsx",
+    "frontend/src/components/MergedOutputEditor.tsx",
+    "frontend/src/components/ModuleCard.tsx",
+    "frontend/src/components/ProgressRing.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/ChallengeWorkspace.tsx",
+    "frontend/src/pages/Dashboard.tsx",
+    "frontend/src/pages/DataStructureVisualizer.tsx",
+    "frontend/src/pages/GitConflictSimulator.tsx",
+    "frontend/src/pages/IndustryChallengeFeed.tsx",
+    "frontend/src/pages/MyNotes.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}
